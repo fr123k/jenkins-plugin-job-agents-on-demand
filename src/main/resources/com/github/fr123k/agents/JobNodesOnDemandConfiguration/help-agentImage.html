@@ -1,0 +1,7 @@
+<div>
+    The name of the docker image in the form 'registry/image:version' to use for provision agents.
+    It's support placeholder for the label value that is replaced with the label at provision time. 
+    For example the following image value 'fr123k/jocker-agents-{label}' for the label 'golang' is transformed to 'fr123k/jocker-agents-golang'.
+    If the value is not empty it will be passed to the AgentProvisionJob and AgentDecomissionJob
+    as parameter with the name 'image'.
+</div>

@@ -17,9 +17,11 @@ The plugin support two different types of jobs for the agent lifecycle.
 * provisioning
 * decommissioning
 
-The motivation and inspiration came from the following jenkins plugin
-[docker-plugin](https://github.com/jenkinsci/docker-plugin).
-It provides jenkins agents based on Dockerfile templates that can be
+The motivation and inspiration came from the following jenkins plugins
+[one-shot-executor-plugin](https://github.com/jenkinsci/one-shot-executor-plugin) and [docker-plugin](https://github.com/jenkinsci/docker-plugin).
+The first provides one shot jenkins agents that only perform one build and and then
+get destroyed.
+The second provides jenkins agents based on Dockerfile templates that can be
 provided for specific labels. But it has a couple of limitations that
 lead to the decision to implement an different plugin.
 

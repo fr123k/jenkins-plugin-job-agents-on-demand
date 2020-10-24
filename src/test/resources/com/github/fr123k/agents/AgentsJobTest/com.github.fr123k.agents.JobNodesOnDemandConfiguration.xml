@@ -1,0 +1,14 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<com.github.fr123k.agents.JobNodesOnDemandConfiguration plugin="job-agents-on-demand@1.0-SNAPSHOT">
+  <enabled>true</enabled>
+  <agentProvisionJob>AgentBootstrap</agentProvisionJob>
+  <agentDecomissionJob>AgentDestroy</agentDecomissionJob>
+  <agentImage>fr123k/jocker-agents-{label}</agentImage>
+  <agentWorkDir>/home/jenkins</agentWorkDir>
+  <excludeLabes>docker</excludeLabes>
+  <gitRevision>fr/add_maven_docker_build_agent</gitRevision>
+  <gitUrl>https://github.com/fr123k/jocker-agents</gitUrl>
+  <revision>fr123k/docker_agents_on_demand</revision>
+  <maxNodesPerLabel>5</maxNodesPerLabel>
+  <maxIdleTime>10</maxIdleTime>
+</com.github.fr123k.agents.JobNodesOnDemandConfiguration>

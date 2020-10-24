@@ -1,0 +1,7 @@
+<div>
+    Specify the git url to find the agents Dockerfile's for building the agents on demands.
+    If the value is not empty it will be passed to the AgentProvisionJob and AgentDecomissionJob
+    as parameter with the name 'gitUrl'.
+    It's support placeholder for the label value that is replaced with the label at provision time. 
+    For example the following value 'https://github.com/fr123k/jocker-agents-{label}' for the label 'golang' is transformed to 'https://github.com/fr123k/jocker-agents-golang'.
+</div>
