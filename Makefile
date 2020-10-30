@@ -21,6 +21,9 @@ package: clean ## package priority sorter plugin
 	cat target/classes/META-INF/annotations/hudson.Extension.txt
 
 clean:
+	rm -rf ./target
+
+clean-local:
 	# delete all target foldes except jenkins-for-test reduce test time by 80 seconds
 	@bash -c $$'cd target; shopt -s extglob\nrm -rf !("jenkins-for-test"); cd ..'
 
