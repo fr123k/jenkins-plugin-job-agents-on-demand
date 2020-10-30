@@ -15,7 +15,7 @@ test: clean ## package priority sorter plugin
 test-only: clean ## package priority sorter plugin
 	$(DOCKER_COMMAND) mvn -Djava.util.logging.config.file=./src/test/resources/logging.properties -Dtest=$(TEST_NAME) -Dmaven.spotbugs.skip=true test
 
-package: clean ## package priority sorter plugin
+package-local: clean ## package priority sorter plugin
 	#versions:use-latest-versions
 	$(DOCKER_COMMAND) mvn -P quick-build -Dmaven.spotbugs.skip=true -Dmaven.test.skip=true package
 	cat target/classes/META-INF/annotations/hudson.Extension.txt
@@ -30,3 +30,8 @@ clean-local:
 spotbugs: ## package priority sorter plugin
 	$(DOCKER_COMMAND) mvn -Dmaven.test.skip=true install spotbugs:check
 	#spotbugs:gui
+
+package: clean ## package priority sorter plugin
+	#versions:use-latest-versions
+	mvn -B -P quick-build -Dmaven.spotbugs.skip=true -Dmaven.test.skip=true package
+	cat target/classes/META-INF/annotations/hudson.Extension.txt

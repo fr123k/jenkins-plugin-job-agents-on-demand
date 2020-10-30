@@ -1,4 +1,4 @@
-node ("maven") {
+node ("maven-jenkins-plugin") {
     stage('Checkout') {
         cleanWs()
         checkout scm
@@ -7,7 +7,7 @@ node ("maven") {
         try {
             sh("make --version")
             sh("mvn --version")
-                withEnv(['DOCKER_COMMAND=""']) {
+                withEnv(['DOCKER_COMMAND=sh -c']) {
                     sh("make package")
                 }
         } catch(err) {
