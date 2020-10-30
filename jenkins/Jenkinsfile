@@ -1,0 +1,18 @@
+node ("maven") {
+    stage('Checkout') {
+        cleanWs()
+        checkout scm
+    }
+    stage('Build') {
+        try {
+            sh("make --version")
+            sh("mvn --version")
+                withEnv(['DOCKER_COMMAND=""']) {
+                    sh("make package")
+                }
+        } catch(err) {
+            currentBuild.result = 'UNSTABLE'
+            throw(err)
+        }
+    }
+}
